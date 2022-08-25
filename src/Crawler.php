@@ -383,6 +383,9 @@ class Crawler
     {
         if (! $this->browsershot) {
             $this->browsershot = new Browsershot();
+            if (preg_match('/(iPhone|Android)/', $this->getUserAgent()) {
+                $this->browsershot->screenSize(375, 812);
+            }
         }
 
         return $this->browsershot;
